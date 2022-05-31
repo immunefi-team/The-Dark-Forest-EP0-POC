@@ -1,0 +1,26 @@
+query MyQuery {
+  ethereum {
+    address(address: {is: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"}) {
+      address
+    }
+    smartContractEvents(
+      smartContractEvent: {is: "Approval"}
+      options: {}
+      any: {txFrom: {is: "0xC564EE9f21Ed8A2d8E7e76c085740d5e4c5FaFbE"}}
+      smartContractAddress: {is: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"}
+    ) {
+      smartContractEvent(smartContractEvent: {}) {
+        name
+      }
+      arguments {
+        value
+      }
+      block {
+        height
+      }
+      transaction {
+        hash
+      }
+    }
+  }
+}
